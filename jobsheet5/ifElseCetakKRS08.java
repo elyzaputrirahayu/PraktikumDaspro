@@ -28,5 +28,17 @@ public class ifElseCetakKRS08 {
             System.out.println("KRS Semester 8 ditampilkan");
         } else 
             System.out.println("Semester tidak valid");
+
+            Scanner input = new Scanner(System.in);
+
+            int angka; 
+            System.out.println("Masukkan sebuah angka");
+            angka = input.nextInt();
+            if ( angka %2 ==0 ) {
+                System.out.println("Angka tersebut adalah genap");
+                
+            } else {
+                System.out.println("Angka tersebut adalah ganjil");
+            }
         }
     }    
