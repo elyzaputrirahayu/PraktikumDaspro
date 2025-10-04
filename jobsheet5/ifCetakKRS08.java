@@ -15,5 +15,7 @@ public class ifCetakKRS08
         } else {
             System.out.println("Registrasi ditolak. Silahkan lunasi UKT terlebih dahulu");
         }
+        String hasil= (uktLunas) ? "Registrasi berhasil. Silahkan cetak KRS" : "Registrasi ditolak. Silahkan lunasi UKT terlebih dahulu. ";   
+            System.out.println("[versi ternary]" + hasil);
     }
 }
