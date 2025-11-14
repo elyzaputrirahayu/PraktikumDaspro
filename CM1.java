@@ -91,43 +91,35 @@ public class CM1 {
         System.out.println("Rata-rata Nilai Akhir: " + rataRata);
         System.out.println("Status Semester: " + statusSemester); 
         
-        
-        double nilaiakhirreguler;
-        double nilaiakhirprofesional;
-        double nilaiakhirfasttrack;
+    System.out.println("\n=== PENILAIAN REGULER / PROFESIONAL / FAST TRACK ===");
+        System.out.print("Masukkan nilai akhir reguler: ");
+        double nilaiakhirreguler = sc.nextDouble();
 
-        Scanner sc2 = new Scanner(System.in);
- 
+        System.out.print("Masukkan nilai akhir profesional: ");
+        double nilaiakhirprofesional = sc.nextDouble();
 
-        System.out.println("Mahasiswa reguler/profesional/fast track :");
-        Scanner = sc.nextLine();
-        
-        System.out.println("masukkan nilai akhir reguler :");
-        nilaiakhirreguler = sc.nextLine();
+        System.out.print("Masukkan nilai akhir fast track: ");
+        double nilaiakhirfasttrack = sc.nextDouble();
 
-        System.out.println("masukkan nilai akhir profesional :");
-        nilaiakhirprofesional = sc.nextLine();
+        System.out.println("\n--- Hasil Kategori ---");
 
-        System.out.println("masukkan nilai akhir fast track :");
-        nilaiakhirfasttrack = sc.nextLine();
-
-        if (nilaiakhir >= 60 ) {
-            System.out.println("reguler");
-        } else if (nilaiakhir >= 65 ) {
-            System.out.println("profesional");
-        } else if (nilaiakhir >=70 ) {
-                System.out.println("fast track");
-        }
-
-        if (nilaiakhirreguler ("LULUS") && nilaiakhirprofesional ("LULUS")) {
-            if (rataRata >= 65) {
-                statusSemester = "LULUS SEMESTER";
-            } else {
-                statusSemester = "TIDAK LULUS SEMESTER";
-            }
+        if (nilaiakhirfasttrack >= 70) {
+            System.out.println("Kategori: FAST TRACK");
+        } else if (nilaiakhirprofesional >= 65) {
+            System.out.println("Kategori: PROFESIONAL");
+        } else if (nilaiakhirreguler >= 60) {
+            System.out.println("Kategori: REGULER");
         } else {
-            statusSemester = "TIDAK LULUS SEMESTER";
+            System.out.println("Tidak masuk kategori manapun");
         }
+
+        System.out.println("\n=== HASIL AKHIR ===");
+        System.out.println("Nama: " + nama);
+        System.out.println("NIM : " + nim);
+        System.out.println("\nMata Kuliah 1 : " + akhir1 + " (" + huruf1 + ") - " + status1);
+        System.out.println("Mata Kuliah 2 : " + akhir2 + " (" + huruf2 + ") - " + status2);
+        System.out.println("Rata-rata Nilai Akhir: " + rataRata);
+        System.out.println("Status Semester: " + statusSemester);    
 
          sc.close();
     }
