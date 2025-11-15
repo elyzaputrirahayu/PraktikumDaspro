@@ -41,11 +41,21 @@ public class Bioskop08 {
 // 6. Modifikasi kode program pada pertanyaan 5 untuk menampilkan panjang setiap baris pada array menggunakan foreach loop. Compile, run, lalu amati hasilnya.
 
 // 7. Tambahkan kode program untuk menampilkan nama penonton pada baris ke-3 menggunakan for loop. Compile, run, lalu amati hasilnya.
+
 // 8. Modifikasi kode program pada pertanyaan 7 menjadi perulangan dengan foreach loop. Compile, run, lalu lakukan amati hasilnya.
+
 // 9. Modifikasi kembali kode program pada langkah 11 untuk menampilkan nama penonton untuk setiap baris. Compile dan run program kemudian amati hasilnya.
+
 // 10. Menurut Anda, apa kekurangan dan kelebihan foreach loop dibandingkan dengan for loop?
+//     jawab : Foreach loop lebih mudah, bersih, dan aman digunakan untuk membaca seluruh isi array. Namun for loop lebih fleksibel karena dapat mengakses indeks, mengubah nilai, dan mengontrol urutan iterasi.
+
 // 11. Berapa indeks baris maksimal untuk array penonton?
+//     jawab : Indeks baris maksimal = 3
+
 // 12. Berapa indeks kolom maksimal untuk array penonton?
+//     jawab : Indeks kolom maksimal = 1
+
 // 13. Apa fungsi dari String.join()?
-// 14. Commit dan push hasil modifikasi Anda ke Github dengan pesan “Modifikasi
-// Percobaan 1”
+//     jawab : String.join() digunakan untuk menggabungkan beberapa string dengan pemisah tertentu dan sangat berguna untuk menampilkan isi array 1 dimensi atau data yang butuh pemisah.
+
+// 14. Commit dan push hasil modifikasi Anda ke Github dengan pesan “Modifikasi Percobaan 1”
