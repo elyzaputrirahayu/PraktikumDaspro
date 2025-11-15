@@ -13,11 +13,9 @@ public class Bioskop08 {
         penonton [3][0] = "Gisel";
         penonton [3][1] = "Hana";
 
-       System.out.println("Penonton pada baris ke-3: ");
-
-       for (int i = 0; i < penonton[2].length; i++) {
-        System.out.println(penonton[2][i]);
-       }
+        for (int i = 0; i < penonton.length; i++) {
+            System.out.println("Penonton pada baris ke-" + (i+1) + ": " + String.join(",", penonton[i]));
+        }
 
     }
 }
