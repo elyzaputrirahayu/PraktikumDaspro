@@ -14,15 +14,10 @@ public class Bioskop08 {
         penonton [3][1] = "Hana";
 
         System.out.println(penonton.length);
-        System.out.println(penonton [0].length);
-        System.out.println(penonton [1].length);
-        System.out.println(penonton [2].length);
-        System.out.println(penonton [3].length);
 
-        System.out.printf("%s \t %s \n", penonton[0][0], penonton[0][1]);
-        System.out.printf("%s \t %s \n", penonton[1][0], penonton[1][1]);
-        System.out.printf("%s \t %s \n", penonton[2][0], penonton[2][1]);
-        System.out.printf("%s \t %s \n", penonton[3][0], penonton[0][1]);
+        for (int i = 0; i < penonton.length; i++) {
+            System.out.println("Panjang Baris ke-" + (i+1) + ": " + penonton[i].length);
+        }
 
     }
 }
@@ -38,8 +33,13 @@ public class Bioskop08 {
 
 // 4. Tambahkan kode program sebagai berikut:
 //    - Jelaskan fungsi dari penonton.length dan penonton[0].length!
+//      jawab : penonton.length digunakan untuk mengetahui jumlah baris pada array 2 dimensi, penonton[0].length digunakan untuk mengetahui jumlah kolom pada baris pertama
+
 //    - Apakah penonton[0].length, penonton[1].length, penonton[2].length, dan penonton[3].length memiliki nilai yang sama? Mengapa?
+//      jawab : penonton[0].length, penonton[1].length, penonton[2].length, dan penonton[3].length bernilai sama, Semua baris punya jumlah kolom yang sama karena array dibuat dengan ukuran tetap [4][2].
+
 // 5. Modifikasi kode program pada pertanyaan 4 untuk menampilkan panjang setiap baris pada array menggunakan for loop. Compile, run, lalu amati hasilnya.
+
 // 6. Modifikasi kode program pada pertanyaan 5 untuk menampilkan panjang setiap baris pada array menggunakan foreach loop. Compile, run, lalu amati hasilnya.
 // 7. Tambahkan kode program untuk menampilkan nama penonton pada baris ke-3 menggunakan for loop. Compile, run, lalu amati hasilnya.
 // 8. Modifikasi kode program pada pertanyaan 7 menjadi perulangan dengan foreach loop. Compile, run, lalu lakukan amati hasilnya.
