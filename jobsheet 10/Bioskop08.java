@@ -14,9 +14,8 @@ public class Bioskop08 {
         penonton [3][1] = "Hana";
 
         System.out.println(penonton.length);
-
-        for (int i = 0; i < penonton.length; i++) {
-            System.out.println("Panjang Baris ke-" + (i+1) + ": " + penonton[i].length);
+        for (String[] barisPenonton : penonton) {
+            System.out.println("Panjang Baris: " + barisPenonton.length);
         }
 
     }
@@ -41,6 +40,7 @@ public class Bioskop08 {
 // 5. Modifikasi kode program pada pertanyaan 4 untuk menampilkan panjang setiap baris pada array menggunakan for loop. Compile, run, lalu amati hasilnya.
 
 // 6. Modifikasi kode program pada pertanyaan 5 untuk menampilkan panjang setiap baris pada array menggunakan foreach loop. Compile, run, lalu amati hasilnya.
+
 // 7. Tambahkan kode program untuk menampilkan nama penonton pada baris ke-3 menggunakan for loop. Compile, run, lalu amati hasilnya.
 // 8. Modifikasi kode program pada pertanyaan 7 menjadi perulangan dengan foreach loop. Compile, run, lalu lakukan amati hasilnya.
 // 9. Modifikasi kembali kode program pada langkah 11 untuk menampilkan nama penonton untuk setiap baris. Compile dan run program kemudian amati hasilnya.
