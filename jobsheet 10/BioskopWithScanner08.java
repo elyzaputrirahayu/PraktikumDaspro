@@ -17,7 +17,29 @@ public class BioskopWithScanner08 {
             System.out.print("Pilih menu: ");
             menu = sc.nextInt();
             sc.nextLine();
-        
+
+            if (menu == 2) {
+                System.out.println("\n=== DAFTAR PENONTON ===");
+                
+                for (int i = 0; i < penonton.length; i++) {
+                    for (int j = 0; j < penonton[i].length; j++) {
+                        if (penonton[i][j] == null) {
+                            System.out.print("***\t");
+                        } else {
+                            System.out.print(penonton[i][j] + "\t");
+                        }
+                    }
+                    System.out.println();
+                }
+                continue;
+            }
+
+            if (menu == 3) {
+                System.out.println("Program selesai.");
+                break;
+            }
+
+            //menu 1 dibawah
                 while (true) {
                     System.out.print("Masukkan nama: ");
                     nama = sc.nextLine();
@@ -39,16 +61,16 @@ public class BioskopWithScanner08 {
                         }
                         sc.nextLine();
 
-                        if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2 ) {
-                            System.out.println("kursi tidak tersedia, ulangi !");
-                            continue;
-                        }
+                    if (baris < 1 || baris > 4 || kolom < 1 || kolom > 2 ) {
+                        System.out.println("kursi tidak tersedia, ulangi !");
+                        continue;
+                    }
 
-                        if (penonton[baris-1][kolom-1] !=null) {
-                            System.out.println("kursi sudah terisi oleh " + penonton[baris-1][kolom-1]);
-                            System.out.println("pilih kursi lain.");
-                            continue;  
-                        }
+                    if (penonton[baris-1][kolom-1] !=null) {
+                        System.out.println("kursi sudah terisi oleh " + penonton[baris-1][kolom-1]);
+                        System.out.println("pilih kursi lain.");
+                        continue;  
+                    }
                         break;
                     }
                     penonton[baris-1][kolom-1] = nama;
@@ -76,4 +98,5 @@ public class BioskopWithScanner08 {
 // 4. Pada menu 1, modifikasi kode program untuk memberikan warning apabila kursi yang dipilih sudah terisi oleh penonton lainnya lalu munculkan perintah untuk memasukkan baris dan kolom kembali
 
 // 5. Pada menu 2, jika kursi kosong, ganti null dengan ***
+
 // 6. Commit dan push hasil modifikasi Anda ke Github dengan pesan “Modifikasi Percobaan 2”
