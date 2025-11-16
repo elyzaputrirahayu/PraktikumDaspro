@@ -14,18 +14,29 @@ public class BioskopWithScanner08 {
             System.out.println("1. Input Data Penonton");
             System.out.println("2. Tampilkan Daftar Penonton");
             System.out.println("3. Exit");
-            System.out.println("Pilih menu: ");
+            System.out.print("Pilih menu: ");
             menu = sc.nextInt();
-            sc.nextInt();
+            sc.nextLine();
         
-            if (menu == 1) {
                 while (true) {
                     System.out.print("Masukkan nama: ");
                     nama = sc.nextLine();
+
                     System.out.print("Masukkan baris: ");
                     baris = sc.nextInt();
+                    while (baris < 1 || baris > 4) {
+                        System.out.println("baris tidak tersedia !");
+                        System.out.println("Masukkan baris :");
+                        baris = sc.nextInt();
+                    }
+
                     System.out.print("Masukkan kolom: ");
                     kolom = sc.nextInt();
+                    while (kolom < 1 || kolom > 2) {
+                        System.out.println("kolom tidak tersedia !");
+                        System.out.println("Masukkan kolom :");
+                        kolom = sc.nextInt();
+                    }
                     sc.nextLine();
 
                     penonton[baris-1][kolom-1] = nama;
@@ -40,7 +51,6 @@ public class BioskopWithScanner08 {
             }
         }
     }
-}
 
 // 1. Apakah pengisian elemen array dari scanner harus dilakukan secara berurutan mulai dari indeks ke-0? Jelaskan!
 //    jawab : Tidak, Pengisian elemen array tidak harus dilakukan berurutan dari indeks ke-0. Jadi, pengisian boleh acak, misalnya langsung isi kursi baris 3 kolom 2, tidak harus mulai dari baris 1 kolom 1
