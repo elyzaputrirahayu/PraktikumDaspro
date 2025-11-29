@@ -32,7 +32,7 @@ public class Kafe08 {
     }
 
     public static void main(String[] args) {
-        Menu("Andi", true, "DISKON50");
+        Menu("Andi", true, "DISKON30");
     }
 }
 
@@ -96,5 +96,10 @@ public class Kafe08 {
 //      jawab : 
 
 // 7.	Berdasarkan fungsi Menu() di atas, jika nama pelanggan adalah "Budi", pelanggan tersebut member, dan menggunakan kode promo "DISKON30", tuliskan satu baris perintah pemanggilan fungsi menu yang benar.
+//      jawab : public static void main(String[] args) {
+//                  Menu("Andi", true, "DISKON30");
+
 // 8.	Menurut Anda, apakah penggunaan parameter namaPelanggan dan isMember pada fungsi Menu() membuat program lebih mudah dibaca dan dikembangkan dibandingkan jika nilai-nilai tersebut ditulis langsung di dalam fungsi tanpa parameter? Jelaskan alasan Anda.
+//      jawab : Penggunaan parameter membuat program lebih fleksibel, mudah dibaca, mudah dikembangkan, dan lebih efisien, dibandingkan menulis nilai langsung di dalam fungsi.
+
 // 9.	Commit dan push hasil modifikasi Anda ke Github dengan pesan “Modifikasi Percobaan 2”
