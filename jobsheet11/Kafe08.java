@@ -1,5 +1,8 @@
 package jobsheet11;
 
+import java.net.SocketTimeoutException;
+import java.util.Scanner;
+
 public class Kafe08 {
     public static void Menu(String namaPelanggan, boolean isMember, String kodePromo){
         System.out.println("Selamat datang, " + namaPelanggan + "!");
@@ -31,8 +34,47 @@ public class Kafe08 {
         System.out.println("Silahkan pilih menu yang Anda inginkan.");
     }
 
+    public static int hitungTotalHarga(int pilihanMenu, int banyakItem, String kodePromo) {
+            int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
+
+            int hargaTotal = hargaItems[pilihanMenu - 1]* banyakItem;
+
+            double diskon = 0;
+
+            if (kodePromo.equalsIgnoreCase("DISKON50")) {
+                diskon = hargaTotal*0.50;
+                System.out.println("kode promo valid ! Anda mendapatkan diskon 50%");
+            }
+            else if (kodePromo.equalsIgnoreCase("DISKON30")) {
+                diskon = hargaTotal*0.30;
+                System.out.println("kode promo valid ! Anda mendapatkan diskon 30%");
+            }
+            else {
+                System.out.println("kode promo invalid atau tidak tersedia. tidak ada diskon");
+            }
+
+            int totalBayar = (int)(hargaTotal - diskon);
+
+            return totalBayar;
+        }
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Menu("Andi", true, "DISKON30");
+
+        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan : ");
+        int pilihanMenu = sc.nextInt();
+
+        System.out.print("Masukkan jumlah item yang dipesan : ");
+        int banyakItem = sc.nextInt();
+
+        sc.nextLine();
+        System.out.print("Masukkan kode promo : ");
+        String kodePromo = sc.nextLine();
+
+        int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem, kodePromo);
+
+        System.out.println("Total harga setelah diskon : Rp" + totalHarga);
     }
 }
 
@@ -103,3 +145,60 @@ public class Kafe08 {
 //      jawab : Penggunaan parameter membuat program lebih fleksibel, mudah dibaca, mudah dikembangkan, dan lebih efisien, dibandingkan menulis nilai langsung di dalam fungsi.
 
 // 9.	Commit dan push hasil modifikasi Anda ke Github dengan pesan “Modifikasi Percobaan 2”
+
+
+//                              PERCOBAAN 3
+// 1.	Jelaskan secara singkat kapan suatu fungsi membutuhkan nilai kembalian (return value) dan kapan fungsi tidak perlu mengembalikan nilai. Berikan minimal satu contoh dari program kafe pada Percobaan 3 untuk masing-masing kasus.
+//      jawab : 1)	Fungsi membutuhkan nilai kembalian jika kita membutuhkan hasil perhitungan / prosesnya untuk digunakan lagi di bagian lain program, contoh kode program pada program kafe adalah :
+//                  public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
+//                          int[] hargaItems = {15000, 20000, 22000, 12000, 10000,18000};
+
+//                          int hargaTotal = hargaItems[pilihanMenu - 1]* banyakItem;
+//                          return hargaTotal;        
+//                   }
+//                  Fungsi ini menghitung total harga, dan hasilnya harus dipakai lagi di main, sehingga wajib memakai return.
+//               2)	Fungsi tidak membutuhkan return jika tugasnya hanya melakukan aksi, bukan mengembalikan nilai. Biasanya aksi seperti :
+//                  -	menampilkan teks
+//                  -	menampilkan menu
+//                  -	mencetak hasil ke layar
+//                  -	memberi informasi
+//              contoh kode programnya adalah :
+//              public static void Menu(String namaPelanggan, boolean isMember, String kodePromo){
+//                      System.out.println("Selamat datang, " + namaPelanggan + "!");
+
+//                      System.out.println("===== MENU RESTO KAFE =====");
+//                      System.out.println("1. Kopi Hitam - Rp 15,000");
+//                      System.out.println("2. Cappuccino - Rp 20,000");
+//                      System.out.println("3. Latte - Rp 22,000");
+//                      System.out.println("4. Teh Tarik - Rp 12,000");
+//                      System.out.println("5. Roti Bakar - Rp 10,000");
+//                      System.out.println("6. Mie Goreng - Rp 18,000");
+//                      System.out.println("============================");
+//                      System.out.println("Silahkan pilih menu yang Anda inginkan.");
+//                }
+//                 Fungsi ini hanya menampilkan menu dan informasi, tidak menghasilkan nilai yang perlu digunakan lagi, jadi cukup memakai void.
+
+
+// 2.	Fungsi hitungTotalHargaNoPresensi saat ini mengembalikan total harga berdasarkan pilihanMenu dan jumlahPesanan. 
+//      Sebutkan tipe data nilai kembalian dan dua buah parameter yang digunakan fungsi tersebut. Jelaskan arti masing-masing parameter dalam konteks program kafe. 
+//      jawab : Tipe data nilai kembalian fungsi hitungTotalHarga adalah int, Karena fungsi ini mengembalikan total harga dalam bentuk bilangan bulat (integer). 
+//              Parameter 1: int pilihanMenu
+//              •	Digunakan untuk menentukan item apa yang dipilih pelanggan dari daftar menu.
+//              •	Nilai pilihanMenu digunakan sebagai index dalam array harga : hargaItems[pilihanMenu - 1]
+//              •	Contoh:
+//                  Jika pelanggan memilih menu nomor 3, maka program mengambil harga dari hargaItems[2], yaitu Latte - Rp 22.000.
+//              •	Artinya: nomor menu yang dipilih pelanggan.
+//              Parameter 2: int banyakItem
+//              •	Menyatakan berapa jumlah porsi atau item yang dipesan pelanggan.
+//              •	Digunakan untuk menghitung total harga : hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
+//              •	Contoh:
+//              Jika pesan menu 3 sebanyak 2 item → total harga = 22.000 × 2.
+//              •	Artinya: jumlah pesanan untuk menu tersebut.
+
+// 3.	Modifikasi kode di atas sehingga fungsi hitungTotalHargaNoPresensi dapat menerima kodePromo. Jika kodePromo adalah "DISKON50", maka mendapat diskon 50% dari totalHarga dan tampilkan diskon. Jika kodePromo adalah "DISKON30", maka mendapat diskon 30% dari totalHarga dan tampilkan diskon.
+//      Jika tidak ada kode promo yang berlaku, tampilkan kode invalid dan tidak ada pengurangan total harga totalHarga.
+//    
+
+// 4.	Modifikasi kode di atas sehingga bisa memilih beberapa jenis menu berbeda serta menampilkan total keseluruhan pesanan. Bagaimana memodifikasi program sehingga pengguna dapat: memesan lebih dari satu jenis menu (misalnya menu 1 dan 3 sekaligus), 
+//      dan menampilkan total keseluruhan pesanan (gabungan dari semua jenis menu) ?
+// 5.	Commit dan push hasil modifikasi Anda ke Github dengan pesan “Modifikasi Percobaan 3”
